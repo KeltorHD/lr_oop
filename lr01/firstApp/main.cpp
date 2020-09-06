@@ -1,8 +1,11 @@
 #include "operations.h"
 
+#include <ctime>
+
 int main()
 {
 	system("chcp 65001>nul"); /*кодировка unicode*/
+	srand(time(0));
 	
 	int* mas{ nullptr };
 	int length{};

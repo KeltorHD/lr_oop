@@ -1,13 +1,13 @@
 #include <iostream>
 
-/*меню заполнения массива*/
+/*РјРµРЅСЋ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР°*/
 void input(std::shared_ptr<int[]>& mas, int length);
 
-/*заполнение руками*/
+/*Р·Р°РїРѕР»РЅРµРЅРёРµ СЂСѓРєР°РјРё*/
 void inputHand(std::shared_ptr<int[]>& mas, int length);
 
-/*заполнение рандомно*/
+/*Р·Р°РїРѕР»РЅРµРЅРёРµ СЂР°РЅРґРѕРјРЅРѕ*/
 void inputRand(std::shared_ptr<int[]>& mas, int length);
 
-/*вывод на экран*/
+/*РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ*/
 void outputScreen(const std::shared_ptr<int[]>& mas, int length);

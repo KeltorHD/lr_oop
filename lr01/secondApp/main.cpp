@@ -1,10 +1,12 @@
 #include "operations.h"
 
+#include <ctime>
 #include <vector>
 
 int main()
 {
 	system("chcp 65001>nul"); /*кодировка unicode*/
+	srand(time(0));
 
 	std::vector<int> mas;
 	int length{};
