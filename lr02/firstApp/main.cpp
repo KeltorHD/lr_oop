@@ -4,6 +4,7 @@
 
 int main()
 {
+	system("chcp 65001>nul"); /*кодировка unicode*/
 	bool isErr{ false };
 	try
 	{

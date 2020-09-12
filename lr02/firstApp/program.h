@@ -12,6 +12,11 @@ class Program
 private:
 	std::vector<Abiturient*> abitur;
 
+	/*methods*/
+	void a();
+	void b();
+	void c();
+
 public:
 	Program();
 	~Program();
