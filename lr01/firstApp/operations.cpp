@@ -115,7 +115,7 @@ void individual(int*& mas, int& length)
 			tmp[i] = mas[i];
 		}
 		
-		delete mas;
+		delete[] mas;
 		length = minus;
 		mas = tmp;
 	}
