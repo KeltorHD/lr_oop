@@ -47,6 +47,18 @@ Matrix Matrix::operator+(const Matrix& mtrx) const
 	return Matrix(tmp);
 }
 
+Matrix& Matrix::operator+=(const Matrix& mtrx)
+{
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			this->m[i][j] += mtrx.m[i][j];
+		}
+	}
+	return *this;
+}
+
 Matrix Matrix::operator-(const Matrix& mtrx) const
 {
 	item tmp[length][length]{};
@@ -59,6 +71,18 @@ Matrix Matrix::operator-(const Matrix& mtrx) const
 		}
 	}
 	return Matrix(tmp);
+}
+
+Matrix& Matrix::operator-=(const Matrix& mtrx)
+{
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			this->m[i][j] -= mtrx.m[i][j];
+		}
+	}
+	return *this;
 }
 
 Matrix Matrix::operator*(const Matrix& mtrx) const
@@ -79,6 +103,18 @@ Matrix Matrix::operator*(const Matrix& mtrx) const
 	return Matrix(tmp);
 }
 
+Matrix& Matrix::operator*=(const Matrix& mtrx)
+{
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			this->m[i][j] *= mtrx.m[i][j];
+		}
+	}
+	return *this;
+}
+
 Matrix Matrix::operator*(item numb) const
 {
 	item tmp[length][length]{};
@@ -91,6 +127,18 @@ Matrix Matrix::operator*(item numb) const
 		}
 	}
 	return Matrix(tmp);
+}
+
+Matrix& Matrix::operator*=(item numb)
+{
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			this->m[i][j] *= numb;
+		}
+	}
+	return *this;
 }
 
 const item* Matrix::operator[](int i)

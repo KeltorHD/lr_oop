@@ -25,9 +25,13 @@ public:
 
 	/*operators*/
 	Matrix operator+(const Matrix& mtrx) const;
+	Matrix& operator+=(const Matrix& mtrx);
 	Matrix operator-(const Matrix& mtrx) const;
+	Matrix& operator-=(const Matrix& mtrx);
 	Matrix operator*(const Matrix& mtrx) const;
+	Matrix& operator*=(const Matrix& mtrx);
 	Matrix operator*(item numb) const;
+	Matrix& operator*=(item numb);
 	const item* operator[](int i);
 
 	Matrix& operator++(); /*prefix*/
