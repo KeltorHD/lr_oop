@@ -17,6 +17,7 @@ class RecordBook
 public:
 	enum class lesson { inf, math, prog, disk, hist, os, fil, saod, oop, fhys, sprt, bd, count };
 
+	friend std::ostream& operator<<(std::ostream& os, RecordBook::lesson& les);
 	friend std::istream& operator>>(std::istream& is, RecordBook::lesson& les);
 
 private:
@@ -57,12 +58,26 @@ private:
 		}
 		float getAverageGrade() /*средний балл*/
 		{
+			return (this->getSumGrade() / static_cast<float>(this->length));
+		}
+		size_t getSumGrade()
+		{
 			float sum{};
 			for (size_t i = 0; i < this->length; i++)
 			{
 				sum += this->masGrade[i].second;
 			}
-			return (sum / this->length);
+			return sum;
+		}
+		size_t getCountLessons() { return this->length; }
+
+		/*print*/
+		void printGrade()
+		{
+			for (size_t i = 0; i < this->length; i++)
+			{
+				std::cout << this->masGrade[i].first << ": " << this->masGrade[i].second << std::endl;
+			}
 		}
 	};
 
@@ -90,5 +105,10 @@ public:
 	friend std::istream& operator>>(std::istream& is, RecordBook& rb);
 
 	/*get*/
-	std::string getInfo();
+	std::string getInfo() const;
+	float getAverageCourse(size_t course) const; /*курс с нулевого*/
+	size_t getCountCourse() const { return this->countSemestr / 2; }
+	size_t getCountGrade(size_t course, int grade) const; /*количество оценок*/
+	
+	void printGrage(size_t semestr) const; /*семестр с нулевого*/
 };

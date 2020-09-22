@@ -16,6 +16,9 @@ private:
 	/*methods*/
 	void a();
 
+	void five(RecordBook* rb);
+	void four_five(RecordBook* rb);
+
 public:
 	Program();
 	~Program();
