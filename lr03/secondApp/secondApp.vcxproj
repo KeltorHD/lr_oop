@@ -141,10 +141,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="program.cpp" />
     <ClCompile Include="recordBook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="program.h" />
     <ClInclude Include="recordBook.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

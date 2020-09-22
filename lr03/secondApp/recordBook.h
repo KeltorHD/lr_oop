@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 /*
 7.Разработать электронную зачетку студента. 
@@ -21,16 +22,15 @@ public:
 private:
 	class GradeSemestr
 	{
-	public:
-		typedef std::vector<std::pair<RecordBook::lesson, int>> gradeMas_t;
 	private:
+		typedef std::vector<std::pair<RecordBook::lesson, int>> gradeMas_t;
 		const size_t length;
 		gradeMas_t masGrade;
 
+	public:
 		GradeSemestr(size_t countLesson)
 			: length(countLesson) { this->masGrade.resize(this->length); };
 
-	public:
 		/*input*/
 		friend std::istream& operator>>(std::istream& is, GradeSemestr& course)
 		{
@@ -41,6 +41,7 @@ private:
 				is >> tmp.second;
 				course.masGrade[i] = tmp;
 			}
+			return is;
 		}
 
 		/*get*/
@@ -71,18 +72,23 @@ private:
 	std::string lastName;
 	std::string specialty;
 
-	const size_t countCourse;
+	size_t countSemestr;
 	semestrMas_t semestrMas;
 
+public:
 	/*constr / destr*/
-	RecordBook(size_t countCourse);
+	RecordBook(size_t countSemestr);
 	~RecordBook();
 
 	RecordBook(const RecordBook& rb);
-	RecordBook(RecordBook&& rb);
+	RecordBook(RecordBook&& rb) noexcept;
 
 	RecordBook& operator=(const RecordBook& rb);
+	RecordBook& operator=(RecordBook&& rb) noexcept;
 
 	/*input*/
 	friend std::istream& operator>>(std::istream& is, RecordBook& rb);
+
+	/*get*/
+	std::string getInfo();
 };
